@@ -1,6 +1,17 @@
 # Open source forskolin-induced swelling (FIS) assay analysis workflow protocol
 7 August 2019
 
+# A collapsible section with markdown
+<details>
+  <summary>Click to expand!</summary>
+  
+  ## Heading
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
+</details>
+
 # About
 The forskolin-induced swelling (FIS) assay has become the preferential assay of choice to assess the efficacy of established and investigational CFTR-modulating compounds for individuals that suffer from cystic fibrosis (CF). In this step-by-step protocol, we describe a complete workflow using open-source software to perform standardized analysis of CFTR function measurements of intestinal (CF) organoids. The workflow comprises 3 major steps:
 1. Renaming of raw microscopy images (include experimental metadata in the file names);
