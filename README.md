@@ -105,7 +105,7 @@ This section describes how to install the software required for the FIS analysis
 
 ### <a name="setup-renaming">3.1. File renaming</a>
 
-[Detailed information](https://github.com/hmbotelho/htmrenamer).  
+[Detailed information](https://github.com/hmbotelho/htmrenamer)  
 
 * **For handling Zeiss files**  
     
@@ -141,14 +141,15 @@ This section describes how to install the software required for the FIS analysis
 
 * **Describe the contents of the assay plate (infile)**
 
-    1. Blank infile templates can be obtained [here](https://github.com/hmbotelho/htmrenamer/blob/master/extras/InFile_template.xlsx) or through the following R commands:
-    
+    1. Infile templates can be obtained [here](https://github.com/hmbotelho/htmrenamer/blob/master/extras/InFile_template.xlsx) or through the following R commands:
+
+
     ```
     library("htmrenamer")
     newinfile.char(8, 12, show = TRUE, saveto = "myinfile.txt")
     ```
 
-    The infile has a table-like structure:
+    The infile has a tabular structure:
 
     ```
     001--A--01--00--00--fsk--0.008
@@ -161,7 +162,7 @@ This section describes how to install the software required for the FIS analysis
 
 ### <a name="setup-imageanalysis">3.2. Image analysis</a>
 
-[Detailed information](https://github.com/hmbotelho/FIS_image_analysis).  
+[Detailed information](https://github.com/hmbotelho/FIS_image_analysis)  
 
 * **Image analysis with CellProfiler**  
 
@@ -189,7 +190,7 @@ This section describes how to install the software required for the FIS analysis
 
 ### <a name="setup-dataanalysis">3.3. Data analysis</a>
 
-[Detailed information](https://github.com/hmbotelho/organoid_analyst).  
+[Detailed information](https://github.com/hmbotelho/organoid_analyst)  
 
 1. **A web browser is required**
 
@@ -297,7 +298,8 @@ This section generates a plain text file describing the contents of each well in
 ### <a name="analysis-renaming">5.3. Rename raw files</a>
 
 This section renames the TIF files, to include relevant metadata in their file names.  
-[Detailed information](https://github.com/hmbotelho/htmrenamer).  
+
+[Detailed information](https://github.com/hmbotelho/htmrenamer)  
 
 
 1. Open R and type
@@ -330,7 +332,7 @@ rename_zeiss_gui()
 
 This section describes how to measure organoid areas in the demonstration dataset, using CellProfiler or Fiji. CellProfiler is recommended for most situations, as described [here](https://github.com/hmbotelho/FIS_image_analysis#background).
 
-[Detailed information](https://github.com/hmbotelho/FIS_image_analysis).  
+[Detailed information](https://github.com/hmbotelho/FIS_image_analysis)  
 
 
 ### <a name="analysis-imageanalysis-CP">5.4.1. CellProfiler</a>
@@ -338,12 +340,10 @@ This section describes how to measure organoid areas in the demonstration datase
 
 1. Open CellProfiler.
 
-![CellProfiler](./img/CP/01_openpipeline.png)
-
-<br/>
-
 
 2. Click `File > Open Project...` and load the [`cp_pipeline_demo.cpproj`](./demo_dataset/04-analysis_pipelines/cp_pipeline_demo.cpproj) file.
+
+![CellProfiler](./img/CP/01_openpipeline.png)
 
 
 3. Click `Window > Show All Windows On Run` to make CellProfiler display all image processing steps as they occur.
@@ -352,7 +352,9 @@ This section describes how to measure organoid areas in the demonstration datase
 4. In the **Images** module, remove all previously listed files (drag mouse and press `delete`) and drag [raw microscopy images](./demo_dataset/03-images_renamed/demoplate_01) to the white box named `Drop files and folders here`.
 
 
+<br/>
 Let us now define image analysis parameters interactively.
+<br/>
 
 
 5. Enter into **Test Mode** by clicking `Test > Start Test Mode`. The active module will now appear underlined (*e.g.* ![active module example](./img/CP/activemodule.png)). Click on ![Step](./img/CP/step.png) after each step to examine the output of the active module.
@@ -365,15 +367,21 @@ Let us now define image analysis parameters interactively.
 
 
 8. The **IdentifyPrimaryObjects** module performs organoid segmentation and is the most critical step in the analysis. With the exception of `Name the primary objects to be identified` all settings may need to be adjusted for each experiment. The following settings need adjustment most often:  
-    - **Typical diameter of objects:** In pixel units. The minimum and maximum size of a circle with the same area as the organoids. Organoids outside this range will be discarded.
-    - **Threshold correction factor:** Controls threshold stringency. A factor of 1 means no adjustment, 0 to 1 lowers the threshold value and > 1 increases the threshold value. 
+    - **Typical diameter of objects:** In pixel units.
+    - **Threshold correction factor:** Controls threshold stringency. 
     
     The following may also need occasional adjustment:  
-    - **Threshold smoothing scale:** Controls image smoothing before the thresholding step. Images with noise usually require more smoothing.
-    - **Suppress local maxima that are closer than...:** In pixel units. Defines the maximum radius in which only 1 organoid should be present (the approximate radius of the smallest expected organoid).
-    - **Fill holes in identified objects:** Allows for filling holes of the identified objects after thresholding of the image. When calcein labelling is intense across all wells and time points, `Never` should be selected, as this typically results in less artefacts. However, when there is significant organoid swelling calcein fluorescence is frequently low in the lumen producing objects with holes. We recommend selecting `After both thresholding and declumping` when this occurs. Filling holes may produce an overestimation of organoid size if densely packed organoids touch each other and produce voids (see below).
+    - **Threshold smoothing scale:** Controls image smoothing before the thresholding step.
+    - **Suppress local maxima that are closer than...:** In pixel units. The approximate radius of the smallest organoid.
+    - **Fill holes in identified objects:** we recommend the following settings:
+        * `Never`: when calcein labelling is intense across all wells and time points.  
+        
+        * `After both thresholding and declumping`: when there is significant organoid swelling and calcein fluorescence becomes low in the lumen.  
+        
+        **Note:** filling holes may produce an overestimation of organoid size if densely packed organoids touch each other and produce voids (see below). The Fiji image analysis [is robust against these artifacts](https://github.com/hmbotelho/FIS_image_analysis#1-background).  
     
-    ![Fill holes](./img/CP/fillholes.gif)
+    <p align="center"><img src="./img/CP/fillholes.gif"></p>
+
     
     *Fluorescence image before and after thresholding with and without `Fill holes after both thresholding and declumping`. Note that not filling holes produces an unsatisfactory segmentation with ring-shaped organoids (arrows). When Fill Holes is enabled, most organoids are correctly segmented but a background region is wrongly classified as object at the 40 min frame (arrowhead).*
     *To test this time lapse experiment in CellProfiler select `Test > Choose Image Group > Metadata_wellNum=0020` and `Test > Choose Image Set` to select each time point. Segmentation masks have been re-coloured to accurately track objects. Panels show a portion of the entire image.*
@@ -494,12 +502,6 @@ The Fiji workflow comprises two scripts:
 
 
 8.	The `Results` will display the features of all objects, which may be used to determine object-level quality control values. The log window will show currently applied settings.  
-
-    <br/>
-
-    ![IJ test results](./img/IJ/test/13_test_step_by_step_results.png)  
-    
-    <br/>
     
 
 9. Inspect the `ORGANOIDS_FINAL` image to judge the quality of background subtraction, segmentation and object/level quality control.  
@@ -582,7 +584,7 @@ The Fiji workflow comprises two scripts:
 
 This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and compute summary statistics on the dataset. Organoid Analyst will analyze data from one plate at a time.  
 
-[Detailed information](https://github.com/hmbotelho/organoid_analyst).  
+[Detailed information](https://github.com/hmbotelho/organoid_analyst)  
 
 
 1. Open R and type the following commands:
