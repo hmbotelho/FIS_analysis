@@ -213,7 +213,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 ### <a name="dataset-description">3.1. Assay description</a>
 The FIS assay was performed with intestinal organoids homozygous for a class II CFTR mutation in the absence (DMSO) or presence of VX-809 and/or VX-770 (3.2 μM), as previously described [[2](#ref02)]. CFTR was activated by addition of forskolin (Fsk) in a concentration range from 0.008 μM – 5 μM. Specimens were laid out in a 96 well plate, as depicted below.
 
-![demo plate layout](./img/schemes/plate_layout_733x205.png)
+<p align="center"><img src="./img/schemes/plate_layout_733x205.png"></p>
 
 These are the main characteristics of the microscopy images in the demonstration dataset:
 
@@ -313,7 +313,7 @@ rename_zeiss_gui()
 3. Click `Start renaming` and wait for the renaming process.
 
 
-![rename_zeiss_gui](./img/htmrenamer/renamer_zeiss.png)
+<p align="center"><img src="./img/htmrenamer/renamer_zeiss.png"></p>
 
 <br/>
 
@@ -336,7 +336,7 @@ This section describes how to measure organoid areas in the demonstration datase
 
 2. Click `File > Open Project...` and load the [`cp_pipeline_demo.cpproj`](./demo_dataset/04-analysis_pipelines/cp_pipeline_demo.cpproj) file.
 
-![CellProfiler](./img/CP/01_openpipeline.png)
+<p align="center"><img src="./img/CP/01_openpipeline.png"></p>
 
 
 3. Click `Window > Show All Windows On Run` to make CellProfiler display all image processing steps as they occur.
@@ -391,7 +391,7 @@ Let us now define image analysis parameters interactively.
 
 10. The **FilterObjects** module allows excluding individual organoids based on fluorescence intensity of morphological features. In the `Category` and `Measurement` boxes select the feature chosen in step 9. In `Minimum value` and `Maximum value` insert the range of allowed values. Organoids with values outside this range will be discarded.
 
-    ![FilterObjects](./img/CP/FilterObjects_pannel_witharrow.png)
+    <p align="center"><img src="./img/CP/FilterObjects_pannel_witharrow.png"></p>
     *An example where objects with [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html) > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
  
     **Disable the filtering by entering excessively low or high values.**  
@@ -445,14 +445,14 @@ The Fiji workflow comprises two scripts:
 
 3. Start the test mode by selecting `FIS > FIS test...`.
 
-    ![Fiji window test menu](./img/IJ/test/01_FIStest.png)
+    <p align="center"><img src="./img/IJ/test/01_FIStest.png"></p>
 
 <br/>
 
 
 4. The test mode window will open.
 
-    ![Test window](./img/IJ/test/02_testwindow.png)
+    <p align="center"><img src="./img/IJ/test/02_testwindow.png"></p>
 
 
 5. Define analysis parameters for the selected image:  
@@ -489,7 +489,7 @@ The Fiji workflow comprises two scripts:
 
     <br/>
     
-    ![All test windows](./img/IJ/test/03_test_allwindows.png)
+    <p align="center"><img src="./img/IJ/test/03_test_allwindows.png"></p>
 
     <br/>
 
@@ -523,7 +523,7 @@ The Fiji workflow comprises two scripts:
 
 3. The batch analysis window will open.
  
-    ![FIS analysis window](./img/IJ/analysis/02_analysiswindow.png)
+    <p align="center"><img src="./img/IJ/analysis/02_analysiswindow.png"></p>
 
     <br/>
 
@@ -590,7 +590,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 
 2. Organoid Analyst will open in a new browser window
     
-    ![Organoid Analyst](./img/OA/start.png)
+    <p align="center"><img src="./img/OA/start.png"></p>
 
     <br/>
 
@@ -651,7 +651,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
 
     <br/>
 
-    ![plotting section](./img/OA/plot_crop.png)
+    <p align="center"><img src="./img/OA/plot_crop.png"></p>
 
     <br/>
     
@@ -664,7 +664,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
         
     * **Timelapse viewer:** Opens images as time lapse sequences in Fiji. Select the wells of interest and click ![Open movies in Fiji](./img/OA/openmovies.png)
     
-    ![Organoid Analyst Fiji](./img/OA/CP--08_OA_IJ.png)
+    <p align="center"><img src="./img/OA/CP--08_OA_IJ.png"></p>
     
     <br/>
     
@@ -745,7 +745,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
 | Fsk + VX-770 + VX-809 | 2              |        2620.19 |       289.62 |
 | Fsk + VX-770 + VX-809 | 5              |        2998.54 |       149.31 |
 
-![AUC titration - CellProfiler](./img/OA/CP_lowres.png)
+<p align="center"><img src="./img/OA/CP_lowres.png"></p>
 
 <br/>
 
@@ -789,7 +789,7 @@ Performing an equivalent analysis of the data in [`05-images_analysis/demoplate_
 | Fsk + VX-770 + VX-809 | 2              |        2212.82 |       323.37 |
 | Fsk + VX-770 + VX-809 | 5              |        2645.44 |       139.45 |
 
-![AUC titration - CellProfiler](./img/OA/IJ_lowres.png)
+<p align="center"><img src="./img/OA/IJ_lowres.png"></p>
 
 <br/>
 
