@@ -656,20 +656,20 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
    
 8. The `3. Plotting` section allows interactive data exploration, image visualization and per well quality control.
 
-<br/>
+    <br/>
 
     ![plotting section](./img/OA/plot_crop.png)
 
-<br/>
+    <br/>
     
     
     The following features are available:
     
     * **Analysis settings:** Defines the final time point for the experiment and the time points to be used for the calculation of the initial swelling rate.
         
-    * **Quality control:** Allows excluding individual wells from the analysis (_e.g._ wells with imaging aberrations or insufficient organoids). Selected wells will be hidden from all generated plots and summary statistics.
+    * **Quality control:** Excludes individual wells from the analysis (_e.g._ wells with imaging aberrations or insufficient organoids).
         
-    * **Timelapse viewer:** Allows for opening and inspection of an arbitrary number of wells as time lapse sequences in Fiji. Start by selecting the wells of interest and clicking the ![Open movies in Fiji](./img/OA/openmovies.png) button. Fiji will open in a new window as shown below. Raw fluorescence images will be overlaid with segmentation masks and organoid labels from the analyses.
+    * **Timelapse viewer:** Opens images as time lapse sequences in Fiji. Select the wells of interest and click ![Open movies in Fiji](./img/OA/openmovies.png)
     
     ![Organoid Analyst Fiji](./img/OA/CP--08_OA_IJ.png)
     
@@ -682,7 +682,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
     
         * Dose-response plot for AUC measurements. For this plot to be appropriately generated, the infile must contain strictly numerical values for the compound concentration field.
     
-        * Bar plots representing summarized AUC, ISR and Aₜ/A₀ measurements (average ± standard deviatio, across identically treated wells).  
+        * Bar plots representing summarized AUC, ISR and Aₜ/A₀ measurements (average ± standard deviation, across identically treated wells).  
 
 
     The demonstration dataset was analyzed using the following settings:
