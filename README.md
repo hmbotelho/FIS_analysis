@@ -32,22 +32,25 @@
 
 
 ## <a name="overview">1. Overview</a>
-The forskolin-induced swelling (FIS) assay has become the preferential assay of choice to assess the efficacy of established and investigational CFTR-modulating compounds for individuals that suffer from cystic fibrosis (CF) [[1](#ref01)]. In this step-by-step protocol, we describe a complete workflow using open-source software to perform standardized analysis of CFTR function measurements of intestinal (CF) organoids. The workflow comprises 3 steps:
+The forskolin-induced swelling (FIS) assay has become the preferential assay to assess the efficacy of established and investigational CFTR-modulating compounds for individuals that suffer from cystic fibrosis (CF) [[1](#ref01)]. This is a quick reference manual demonstrating the usage of an open-source workflow to perform standardized analysis of CFTR function measurements of intestinal (CF) organoids. The workflow comprises 3 steps:
 
 1. **Renaming of raw microscopy images**  
     *Convert raw microscopy images to a common format, regardless of microscope brand or imaging modality.*  
     *Include experimental metadata in file names.*  
-    *Implemented in **htmrenamer**. [More info](https://github.com/hmbotelho/htmrenamer).*
+    *Implemented in **htmrenamer**.  
+    [More info](https://github.com/hmbotelho/htmrenamer)*
 
 
 2. **Image analysis**  
     *Measurement of organoid area.*  
-    *Implemented in **CellProfiler** or **Fiji/ImageJ**. [More info](https://github.com/hmbotelho/FIS_image_analysis).*  
+    *Implemented in **CellProfiler** or **Fiji/ImageJ**.  
+    [More info](https://github.com/hmbotelho/FIS_image_analysis)*  
 
 
 3. **Statistical Data analysis**  
     *Including data visualization, exploratory data analysis, quality control and normalization.*
-    *Implemented in **Organoid Analyst**. [More info](https://github.com/hmbotelho/organoid_analyst).*
+    *Implemented in **Organoid Analyst**.  
+    [More info](https://github.com/hmbotelho/organoid_analyst)*
 
 <br/>
 
@@ -56,17 +59,24 @@ The forskolin-induced swelling (FIS) assay has become the preferential assay of 
 <br/>
 
 
-    Organoid Analyst computes the following statistics on the dataset:  
-    * **AUC (area under the curve):** calculated between the first and the last time points of the experiment (usually: 0 and 60 min).
-    * **ISR (initial swelling rate):** the slope of a line fitted to the region of maximal linear swelling as measured in the normalized kinetic curves.
-    * **Aₜ/A₀:** normalized area value at the final time point of the FIS assay (Aₜ), using normalization factor A₀ = 100%.
+The workflow processes an imaging dataset (typically a time lapse microscopy experiment based on the 96 well plate format), extracts organoid cross-sectional area and computes the following statistics:  
+
+* **AUC (area under the curve):** calculated between the first and the last time points of the experiment (usually: 0 and 60 min).  
+* **ISR (initial swelling rate):** the slope of a line fitted to the region of maximal linear swelling as measured in the normalized kinetic curves.  
+* **Aₜ/A₀:** normalized area value at the final time point of the FIS assay (Aₜ), using normalization factor A₀ = 100%.  
+
+<br/>
 
 ![Organoid Analyst measurements](./img/OA/3measurements_400x347_2.png)
 
 <br/>
 
 
-Equivalent results can be obtained regardless of the microscope manufacturer (Zeiss and Leica are currently supported) or the image analysis tool (CellProfiler or Fiji) selected by the user, as shown below.
+The workflow is agnostic to the microscope manufacturer and to the image analysis tool:  
+* **Zeiss** and **Leica** imaging datasets are currently supported  
+* Image analysis can be performed on either [**CellProfiler**](https://cellprofiler.org/) or [**Fiji**](http://fiji.sc/).  
+
+Equivalent results can be obtained regardless of the microscope brand or image analysis tool selected by the user, as shown in the following scheme.
 
 <br/>
 
