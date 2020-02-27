@@ -456,37 +456,29 @@ The Fiji workflow comprises two scripts:
 
 5. Define analysis parameters for the selected image:  
 
-    **Background filter:** The filter which generates a pseudo-flat field from the fluorescence image. The pseudo-flat field will be subtracted to the raw fluorescence image to generate a background corrected image. Selecting `No filter (flat background)` disables this correction.  
+    * **Background filter:** The filter which generates a pseudo-flat field from the fluorescence image. The pseudo-flat field will be subtracted to the raw fluorescence image to generate a background corrected image.  
     
-    **Radius of filter:** The radius of the background filter, in pixel units.  
+    * **Radius of filter:** The radius of the background filter.  
     
-    **Offset after background correction:** This value will be subtracted from all pixels after background correction, regardless of the background filter option. Offsetting may be necessary when the fluorescence baseline is not zero after the pseudo-flat field correction.  
+    * **Offset after background correction:** This value will be subtracted from all pixels after background correction, regardless of the background filter option.  
     
-    **Manual threshold value:** This will be applied after pseudo-flat field subtraction, offset correction and grey value rescaling to [0 ~ 1]. All pixels above this grey value will be assigned to objects (organoids).  
+    * **Manual threshold value:** This will be applied after pseudo-flat field subtraction, offset correction and grey value rescaling to [0 ~ 1]. All pixels above this grey value will be assigned to objects (organoids).  
     
-    **Fill all holes:**. When unchecked, an [optimized hole filling algorithm](https://github.com/hmbotelho/FIS_image_analysis#background) is applied. When checked, all holes are filled after the thresholding step.  
+    * **Fill all holes:**. When unchecked, an [optimized hole filling algorithm](https://github.com/hmbotelho/FIS_image_analysis#background) is applied. When checked, all holes are filled after the thresholding step.  
     
-    **Remove salt and pepper noise:** When checked, isolated pixels in the thresholded image will be removed.  
+    * **Remove salt and pepper noise**  
+     
+    * **Exclude objects touching the image border**  
     
-    **Font size for organoid labels:** Each segmented organoid will be overlaid with a unique label having this font size.  
+    * **Minimum/Maximum organoid area:** Minimum/Maximum allowed size of organoids (in μm² units).  
     
-    **Exclude objects touching the image border:** When checked, all objects which touch the image border on each image will be discarded from the analysis.  
+    * **Minimum/Maximum organoid circularity:** Minimum/Maximum allowed circularity of organoids.  
     
-    **Minimum organoid area:** Minimum allowed size of organoids (in μm² units). Smaller objects (*e.g.* debris) will be discarded from the analysis.  
+    * **Exclude organoids based on measurement:** Besides area and circularity, an additional feature can be selected here for additional object-level quality control purposes. A common use case is to use this option to discard dead organoids.  
     
-    **Maximum organoid area:** Maximum allowed size of organoids (in μm² units). Larger objects will be discarded from the analysis.  
+    * **Minimum/Maximum allowed value:**  Minimum/Maximum allowed value for the additional quality control measurement.  
     
-    **Minimum organoid circularity:** Minimum allowed circularity of organoids. Organoids with lower circularity will be discarded from the analysis. **Note:** 0 ≤ circularity ≤ 1  
-    
-    **Maximum organoid circularity:** Maximum allowed circularity of organoids. Organoids with higher circularity will be discarded from the analysis. **Note:** 0 ≤ circularity ≤ 1  
-    
-    **Exclude organoids based on measurement:** Besides area and circularity, an additional feature can be selected here for additional object-level quality control purposes. A common use case is to use this option to discard dead organoids.  
-    
-    **Minimum allowed value:**  Minimum allowed value for the additional quality control measurement. Organoids with smaller values will be discarded from the analysis.  
-    
-    **Maximum allowed value:** Maximum allowed value for the additional quality control measurement. Organoids with larger values will be discarded from the analysis.  
-    
-    **Pixel width/height:** Pixel size in the raw microscopy image. This is used to set the image scale throughout the test and analysis processes.  
+    * **Pixel width/height:** Pixel dimension in the raw microscopy image.  
 
 
 6. Click the `OK` button to test the analysis settings in the open image.  
