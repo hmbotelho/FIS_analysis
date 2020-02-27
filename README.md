@@ -45,7 +45,7 @@ The forskolin-induced swelling (FIS) assay has become the preferential assay of 
     *Implemented in **CellProfiler** or **Fiji/ImageJ**. [More info](https://github.com/hmbotelho/FIS_image_analysis).*  
 
 
-3. **Data analysis**  
+3. **Statistical Data analysis**  
     *Including data visualization, exploratory data analysis, quality control and normalization.*
     *Implemented in **Organoid Analyst**. [More info](https://github.com/hmbotelho/organoid_analyst).*
 
