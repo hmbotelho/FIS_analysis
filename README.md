@@ -5,26 +5,26 @@
 
 ## Table of Contents
 * [1. Overview](#overview)
-* [2. Citation](#citation)
-* [3. Setup](#setup)
-  * [3.1. File renaming](#setup-renaming)
-  * [3.2. Image analysis](#setup-imageanalysis)
-  * [3.3. Data analysis](#setup-dataanalysis)
-* [4. Demonstration datase](#dataset)
-    * [4.1. Assay description](#dataset-description)
-    * [4.2. File download](#dataset-files)
-* [5. Analysis of the demonstration dataset](#analysis)
-    * [5.1. Generate TIF files](#analysis-exporttif)
-    * [5.2. Generate well descriptors (infile)](#analysis-infile)
-    * [5.3. Rename raw files](#analysis-renaming)
-    * [5.4. Image analysis](#analysis-imageanalysis)
-        * [5.4.1. CellProfiler](#analysis-imageanalysis-CP)
-        * [5.4.2. Fiji/ImageJ](#analysis-imageanalysis-IJ)
-            * [5.4.2.1. Test mode](#analysis-imageanalysis-IJ-testmode)
-            * [5.4.2.2. Batch Analysis mode](#analysis-imageanalysis-IJ-batchmode)
-     * [5.5. Statistical data analysis](#analysis-statistics)
-* [6. Interpretation of the results](#interpretation)
-* [7. License](#license)
+* [2. Setup](#setup)
+  * [2.1. File renaming](#setup-renaming)
+  * [2.2. Image analysis](#setup-imageanalysis)
+  * [2.3. Data analysis](#setup-dataanalysis)
+* [3. Demonstration datase](#dataset)
+    * [3.1. Assay description](#dataset-description)
+    * [3.2. File download](#dataset-files)
+* [4. Analysis of the demonstration dataset](#analysis)
+    * [4.1. Generate TIF files](#analysis-exporttif)
+    * [4.2. Generate well descriptors (infile)](#analysis-infile)
+    * [4.3. Rename raw files](#analysis-renaming)
+    * [4.4. Image analysis](#analysis-imageanalysis)
+        * [4.4.1. CellProfiler](#analysis-imageanalysis-CP)
+        * [4.4.2. Fiji/ImageJ](#analysis-imageanalysis-IJ)
+            * [4.4.2.1. Test mode](#analysis-imageanalysis-IJ-testmode)
+            * [4.4.2.2. Batch Analysis mode](#analysis-imageanalysis-IJ-batchmode)
+     * [4.5. Statistical data analysis](#analysis-statistics)
+* [5. Interpretation of the results](#interpretation)
+* [6. License](#license)
+* [7. Citation](#citation)
 * [8. References](#references)
 
 
@@ -91,19 +91,12 @@ This document contains links to all software tools, together with a demonstratio
 
 
 
-## <a name="citation">2. Citation</a>
-Hagemeijer *et al* (2020) **An open-source high-content analysis workflow for CFTR function measurements using the forskolin-induced swelling assay** *submitted*
-
-
-
-
-
-## <a name="setup">3. Setup</a>
+## <a name="setup">2. Setup</a>
 This section describes how to install the software required for the FIS analysis workflow.  
 
 
 
-### <a name="setup-renaming">3.1. File renaming</a>
+### <a name="setup-renaming">2.1. File renaming</a>
 
 [Detailed information](https://github.com/hmbotelho/htmrenamer)  
 
@@ -160,7 +153,7 @@ This section describes how to install the software required for the FIS analysis
 
 
 
-### <a name="setup-imageanalysis">3.2. Image analysis</a>
+### <a name="setup-imageanalysis">2.2. Image analysis</a>
 
 [Detailed information](https://github.com/hmbotelho/FIS_image_analysis)  
 
@@ -188,7 +181,7 @@ This section describes how to install the software required for the FIS analysis
 
 
 
-### <a name="setup-dataanalysis">3.3. Data analysis</a>
+### <a name="setup-dataanalysis">2.3. Data analysis</a>
 
 [Detailed information](https://github.com/hmbotelho/organoid_analyst)  
 
@@ -213,11 +206,11 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 
 
 
-## <a name="dataset">4. Demonstration dataset</a>
+## <a name="dataset">3. Demonstration dataset</a>
 
 
 
-### <a name="dataset-description">4.1. Assay description</a>
+### <a name="dataset-description">3.1. Assay description</a>
 The FIS assay was performed with intestinal organoids homozygous for a class II CFTR mutation in the absence (DMSO) or presence of VX-809 and/or VX-770 (3.2 μM), as previously described [[2](#ref02)]. CFTR was activated by addition of forskolin (Fsk) in a concentration range from 0.008 μM – 5 μM. Specimens were laid out in a 96 well plate, as depicted below.
 
 ![demo plate layout](./img/schemes/plate_layout_733x205.png)
@@ -239,7 +232,7 @@ These are the main characteristics of the microscopy images in the demonstration
 
 
 
-### <a name="dataset-files">4.2. File download</a>
+### <a name="dataset-files">3.2. File download</a>
 
 The demonstration dataset is comprised of:
 1. [**Raw microscopy images (native CZI format)**](./demo_dataset/00-images_raw) (`00-images_raw/demoplate_01.czi`, 169 MB)
@@ -258,13 +251,13 @@ The demonstration dataset is comprised of:
 
 
 
-## <a name="analysis">5. Analysis of the demonstration dataset</a>
+## <a name="analysis">4. Analysis of the demonstration dataset</a>
 
 This section demonstrates how to analyze the demonstration dataset, starting from raw microscopy images and finishing with publication-ready quantitative data. This example can be adapted to analyze any FIS dataset. Additional resources are linked.  
 
 
 
-### <a name="analysis-exporttif">5.1. Generate TIF files</a>
+### <a name="analysis-exporttif">4.1. Generate TIF files</a>
 
 This section generates TIF files which are the required input for the workflow.  
 
@@ -278,7 +271,7 @@ This section generates TIF files which are the required input for the workflow.
 
 
 
-### <a name="analysis-infile">5.2. Generate microscope infile</a>
+### <a name="analysis-infile">4.2. Generate microscope infile</a>
 
 This section generates a plain text file describing the contents of each well in the FIS assay plate (the microscope infile).  
 
@@ -295,7 +288,7 @@ This section generates a plain text file describing the contents of each well in
 
 
 
-### <a name="analysis-renaming">5.3. Rename raw files</a>
+### <a name="analysis-renaming">4.3. Rename raw files</a>
 
 This section renames the TIF files, to include relevant metadata in their file names.  
 
@@ -328,14 +321,14 @@ rename_zeiss_gui()
 
 
 
-### <a name="analysis-imageanalysis">5.4. Image analysis</a>
+### <a name="analysis-imageanalysis">4.4. Image analysis</a>
 
 This section describes how to measure organoid areas in the demonstration dataset, using CellProfiler or Fiji. CellProfiler is recommended for most situations, as described [here](https://github.com/hmbotelho/FIS_image_analysis#background).
 
 [Detailed information](https://github.com/hmbotelho/FIS_image_analysis)  
 
 
-### <a name="analysis-imageanalysis-CP">5.4.1. CellProfiler</a>
+### <a name="analysis-imageanalysis-CP">4.4.1. CellProfiler</a>
 
 
 1. Open CellProfiler.
@@ -442,7 +435,7 @@ The Fiji workflow comprises two scripts:
 * The **analysis** script processes a complete dataset using the parameters determined above.
 
 
-#### <a name="analysis-imageanalysis-IJ-testmode">5.4.2.1. Test mode</a>
+#### <a name="analysis-imageanalysis-IJ-testmode">4.4.2.1. Test mode</a>
 
 1. Open Fiji.
 
@@ -520,7 +513,7 @@ The Fiji workflow comprises two scripts:
 
     
 
-#### <a name="analysis-imageanalysis-IJ-batchmode">5.4.2.2. Batch Analysis mode</a>
+#### <a name="analysis-imageanalysis-IJ-batchmode">4.4.2.2. Batch Analysis mode</a>
 
 1. Open Fiji.
 
@@ -580,7 +573,7 @@ The Fiji workflow comprises two scripts:
 
 
 
-### <a name="analysis-statistics">5.5. Statistical data analysis</a>
+### <a name="analysis-statistics">4.5. Statistical data analysis</a>
 
 This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and compute summary statistics on the dataset. Organoid Analyst will analyze data from one plate at a time.  
 
@@ -810,7 +803,7 @@ Performing an equivalent analysis of the data in [`05-images_analysis/demoplate_
 
 
 
-## <a name="interpretation">6. Interpretation of the results</a>
+## <a name="interpretation">5. Interpretation of the results</a>
 
 These results suggest that the organoid donor is a cystic fibrosis patient, most likely expressing class II CFTR mutations.
 
@@ -827,8 +820,15 @@ This behavior is typical of organoids homozygous for the most common CFTR mutati
 
 
 
-## <a name="license">7. License</a>
+## <a name="license">6. License</a>
 This project is licensed under the terms of the GNU General Public License v3.0 (GNU GPLv3).
+
+
+
+
+
+## <a name="citation">7. Citation</a>
+Hagemeijer *et al* (2020) **An open-source high-content analysis workflow for CFTR function measurements using the forskolin-induced swelling assay** *submitted*
 
 
 
