@@ -427,7 +427,7 @@ Let us now define image analysis parameters interactively.
 **Expected result:** [`05-images_analysis/demoplate_01--cellprofiler`](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler)
 
 
-### <a name="analysis-imageanalysis-IJ">5.4.2. Fiji/ImageJ</a>
+### <a name="analysis-imageanalysis-IJ">4.4.2. Fiji/ImageJ</a>
 
 
 The Fiji workflow comprises two scripts:
