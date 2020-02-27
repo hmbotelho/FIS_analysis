@@ -54,7 +54,8 @@ The forskolin-induced swelling (FIS) assay has become the preferential assay to 
 
 <br/>
 
-![Summary pannel](./img/schemes/summary_pannel.gif)
+<p align="center"><img src="./img/schemes/summary_pannel.gif"></p>
+
 
 <br/>
 
@@ -67,20 +68,20 @@ The workflow processes an imaging dataset (typically a time lapse microscopy exp
 
 <br/>
 
-![Organoid Analyst measurements](./img/OA/3measurements_400x347_2.png)
+<p align="center"><img src="./img/OA/3measurements_400x347_2.png"></p>
 
 <br/>
 
 
 The workflow is agnostic to the microscope manufacturer and to the image analysis tool:  
-* **Zeiss** and **Leica** imaging datasets are currently supported  
+* **Zeiss** and **Leica** imaging datasets are currently supported.  
 * Image analysis can be performed on either [**CellProfiler**](https://cellprofiler.org/) or [**Fiji**](http://fiji.sc/).  
 
 Equivalent results can be obtained regardless of the microscope brand or image analysis tool selected by the user, as shown in the following scheme.
 
 <br/>
 
-![Workflow](./img/schemes/workflow_450x968.png)
+<p align="center"><img src="./img/schemes/workflow_450x968.png"></p>
 
 <br/>
 
@@ -103,6 +104,8 @@ This section describes how to install the software required for the FIS analysis
 
 
 ### <a name="setup-renaming">3.1. File renaming</a>
+
+[Detailed information](https://github.com/hmbotelho/htmrenamer).  
 
 * **For handling Zeiss files**  
     
@@ -145,12 +148,20 @@ This section describes how to install the software required for the FIS analysis
     newinfile.char(8, 12, show = TRUE, saveto = "myinfile.txt")
     ```
 
+    The infile has a table-like structure:
 
-Detailed information available [here](https://github.com/hmbotelho/htmrenamer).
+    ```
+    001--A--01--00--00--fsk--0.008
+    002--A--02--01--00--fsk--5
+    003--A--03--02--00--fsk_vx809--0.008
+    004--A--04--03--00--fsk_vx809--5
+    ```
 
 
 
 ### <a name="setup-imageanalysis">3.2. Image analysis</a>
+
+[Detailed information](https://github.com/hmbotelho/FIS_image_analysis).  
 
 * **Image analysis with CellProfiler**  
 
@@ -161,7 +172,7 @@ Detailed information available [here](https://github.com/hmbotelho/htmrenamer).
     
 
 * **Image Analysis with Fiji/ImageJ**  
-    1. **Install Fiji:** download from [here](http://fiji.sc/).
+    1. **Install Fiji:** download [here](http://fiji.sc/).
     
     
     2. **Download image analysis scripts:** download [here](https://github.com/hmbotelho/FIS_image_analysis/tree/master/Fiji_ImageJ).
@@ -173,27 +184,29 @@ Detailed information available [here](https://github.com/hmbotelho/htmrenamer).
     4. **Install scripts: (macOS):** in Finder, go to Applications, locate Fiji, right click and select `Show Package Contents`. In the `Scripts` folder create a subfolder named `FIS` and copy the `FIS_test....ijm` and `FIS_analysis....ijm` files there.
 
 
-Detailed information available [here](https://github.com/hmbotelho/FIS_image_analysis).
 
 
 
 ### <a name="setup-dataanalysis">3.3. Data analysis</a>
 
-    1. **Install R:** as shown above.
+[Detailed information](https://github.com/hmbotelho/organoid_analyst).  
+
+1. **A web browser is required**
 
 
-    2. **Install Fiji:** as shown above.
+2. **Install R:** as shown above.
 
 
-    3. **Install Organoid Analyst:** in the R console type
+3. **Install Fiji:** as shown above.
+
+
+4. **Install Organoid Analyst:** in the R console type
     
-    ```
-    library(shiny)
-    runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
-    ```
-
-
-Detailed information available [here](https://github.com/hmbotelho/organoid_analyst).
+```
+install.packages("shiny")
+library(shiny)
+runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
+```
 
 
 
@@ -230,15 +243,15 @@ These are the main characteristics of the microscopy images in the demonstration
 The demonstration dataset is comprised of:
 1. [**Raw microscopy images (native CZI format)**](./demo_dataset/00-images_raw) (`00-images_raw/demoplate_01.czi`, 169 MB)
 2. [**Raw microscopy images (TIF export)**](./demo_dataset/01-images_exported/demoplate_01) (`01-images_exported/demoplate_01`, 91.8 MB)
-3. [**Well contents description**](./demo_dataset/02-microscope_infile/demoplate_01.txt) (`02-microscope_infile/demoplate_01.txt`, 3 KB)
+3. [**Infile** (well description)](./demo_dataset/02-microscope_infile/demoplate_01.txt) (`02-microscope_infile/demoplate_01.txt`, 3 KB)
 4. [**Raw microscopy images (renamed)**](./demo_dataset/03-images_renamed/demoplate_01) (`03-images_renamed/demoplate_01`, 91.9 MB)
-5. [**Pre-configured CellProfiler and Fiji image analysis pipelines**](./demo_dataset/04-analysis_pipelines) (`04-analysis_pipelines`, 1.2 MB)
+5. [**CellProfiler and Fiji image analysis pipelines** (pre-configured for the demonstration dataset)](./demo_dataset/04-analysis_pipelines) (`04-analysis_pipelines`, 1.2 MB)
 6. [**Image quantification outputs (CellProfiler)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) (`05-images_analysis/demoplate_01--cellprofiler`, 14.8 MB)
 7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 16.0 MB)
 8. [**Quantification summary (from CellProfiler data)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler--analysis) (`05-images_analysis/demoplate_01--cellprofiler--analysis`, 37.0 MB)
 9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 36.1 MB)
 
-[Download the entire demonstration dataset](./demo_dataset) (458 MB).
+[Download the entire dataset](./demo_dataset) (458 MB).
 
 
 
@@ -246,11 +259,13 @@ The demonstration dataset is comprised of:
 
 ## <a name="analysis">5. Analysis of the demonstration dataset</a>
 
+This section demonstrates how to analyze the demonstration dataset, starting from raw microscopy images and finishing with publication-ready quantitative data. This example can be adapted to analyze any FIS dataset. Additional resources are linked.  
+
 
 
 ### <a name="analysis-exporttif">5.1. Generate TIF files</a>
 
-This section generates TIF files which are the required input for the workflow.
+This section generates TIF files which are the required input for the workflow.  
 
 
 1. Open the native [CZI file](./demo_dataset/00-images_raw/demoplate_01.czi) in ZEN Blue.
@@ -262,12 +277,12 @@ This section generates TIF files which are the required input for the workflow.
 
 
 
-### <a name="analysis-infile">5.2. Generate well descriptors (infile)</a>
+### <a name="analysis-infile">5.2. Generate microscope infile</a>
 
-This section generates a microscope infile, which is a description of the contents of each well of the FIS assay plate.
+This section generates a plain text file describing the contents of each well in the FIS assay plate (the microscope infile).  
 
 
-1. A customized infile for each assay plate can be created by using [this template](https://github.com/hmbotelho/htmrenamer/blob/master/extras/InFile_template.xlsx) or with the following R commands:
+1. Create a customized infile using [this template](https://github.com/hmbotelho/htmrenamer/blob/master/extras/InFile_template.xlsx) or with the following R commands:
     
     ```
     library("htmrenamer")
@@ -281,7 +296,9 @@ This section generates a microscope infile, which is a description of the conten
 
 ### <a name="analysis-renaming">5.3. Rename raw files</a>
 
-This section renames the TIF files, to include relevant metadata in their file names.
+This section renames the TIF files, to include relevant metadata in their file names.  
+[Detailed information](https://github.com/hmbotelho/htmrenamer).  
+
 
 1. Open R and type
 ```
@@ -313,6 +330,7 @@ rename_zeiss_gui()
 
 This section describes how to measure organoid areas in the demonstration dataset, using CellProfiler or Fiji. CellProfiler is recommended for most situations, as described [here](https://github.com/hmbotelho/FIS_image_analysis#background).
 
+[Detailed information](https://github.com/hmbotelho/FIS_image_analysis).  
 
 
 ### <a name="analysis-imageanalysis-CP">5.4.1. CellProfiler</a>
@@ -325,7 +343,7 @@ This section describes how to measure organoid areas in the demonstration datase
 <br/>
 
 
-2. Click `File > Open Project...` and load the [`cp_pipeline_demo.cpproj`](./demo_dataset/04-analysis_pipelines/cp_pipeline_demo.cpproj) file. This project file has been pre-configured with optimal settings for analyzing the demonstration dataset.
+2. Click `File > Open Project...` and load the [`cp_pipeline_demo.cpproj`](./demo_dataset/04-analysis_pipelines/cp_pipeline_demo.cpproj) file.
 
 
 3. Click `Window > Show All Windows On Run` to make CellProfiler display all image processing steps as they occur.
@@ -367,13 +385,13 @@ Let us now define image analysis parameters interactively.
 8. Click ![Step](./img/CP/step.png) until reaching the DisplayDataOnImage module.
 
 
-9. The **DisplayDataOnImage** module is involved in object-level quality control. The user may select any object feature to overlay it on top of each organoid. This assists the user's decision on selecting thresholds to exclude undesired objects.
+9. The **DisplayDataOnImage** module is involved in object-level quality control. Any object feature can be overlaid on top of the miroscopy image to inform the selection of thresholds to exclude undesired objects.
 
 
-10. The **FilterObjects** module allows excluding individual organoids based on fluorescence intensity of morphological features. In the `Category` and `Measurement` boxes select the feature chosen in step 9. In `Minimum value` and `Maximum value` insert the range of allowed values. Organoids with values outside this range will be discarded. Below is an example where  [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html) allows for a perfect discrimination of live (FormFactor ≥ 0.5) and dead (FormFactor = 0.22) organoids.
+10. The **FilterObjects** module allows excluding individual organoids based on fluorescence intensity of morphological features. In the `Category` and `Measurement` boxes select the feature chosen in step 9. In `Minimum value` and `Maximum value` insert the range of allowed values. Organoids with values outside this range will be discarded.
 
     ![FilterObjects](./img/CP/FilterObjects_pannel_witharrow.png)
-    *An example where objects with FormFactor > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
+    *An example where objects with [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html) > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
  
     **Disable the filtering by entering excessively low or high values.**  
 
@@ -421,7 +439,7 @@ The Fiji workflow comprises two scripts:
 1. Open Fiji.
 
 
-2. Open an image (`File > Open...`) to optimize the analysis settings. For this example use the [first time point from well B8 (#20) from the demonstration dataset](./demo_dataset/03-images_renamed/demoplate_01/W0020--fsk_770_809--5/P001--fsk_770_809--5/demoplate_01--fsk_770_809--5--W0020--P001--T0000--C00.tif) as an example.
+2. Open an image (`File > Open...`) to optimize the analysis settings. This example will use the [first time point from well B8 (#20) from the demonstration dataset](./demo_dataset/03-images_renamed/demoplate_01/W0020--fsk_770_809--5/P001--fsk_770_809--5/demoplate_01--fsk_770_809--5--W0020--P001--T0000--C00.tif).
 
 
 3. Start the test mode by selecting `FIS > FIS test...`.
@@ -439,34 +457,53 @@ The Fiji workflow comprises two scripts:
 5. Define analysis parameters for the selected image:  
 
     **Background filter:** The filter which generates a pseudo-flat field from the fluorescence image. The pseudo-flat field will be subtracted to the raw fluorescence image to generate a background corrected image. Selecting `No filter (flat background)` disables this correction.  
-    **Radius of filter:** The radius of the background filter, in pixel units. 
+    
+    **Radius of filter:** The radius of the background filter, in pixel units.  
+    
     **Offset after background correction:** This value will be subtracted from all pixels after background correction, regardless of the background filter option. Offsetting may be necessary when the fluorescence baseline is not zero after the pseudo-flat field correction.  
+    
     **Manual threshold value:** This will be applied after pseudo-flat field subtraction, offset correction and grey value rescaling to [0 ~ 1]. All pixels above this grey value will be assigned to objects (organoids).  
+    
     **Fill all holes:**. When unchecked, an [optimized hole filling algorithm](https://github.com/hmbotelho/FIS_image_analysis#background) is applied. When checked, all holes are filled after the thresholding step.  
+    
     **Remove salt and pepper noise:** When checked, isolated pixels in the thresholded image will be removed.  
+    
     **Font size for organoid labels:** Each segmented organoid will be overlaid with a unique label having this font size.  
+    
     **Exclude objects touching the image border:** When checked, all objects which touch the image border on each image will be discarded from the analysis.  
+    
     **Minimum organoid area:** Minimum allowed size of organoids (in μm² units). Smaller objects (*e.g.* debris) will be discarded from the analysis.  
+    
     **Maximum organoid area:** Maximum allowed size of organoids (in μm² units). Larger objects will be discarded from the analysis.  
+    
     **Minimum organoid circularity:** Minimum allowed circularity of organoids. Organoids with lower circularity will be discarded from the analysis. **Note:** 0 ≤ circularity ≤ 1  
+    
     **Maximum organoid circularity:** Maximum allowed circularity of organoids. Organoids with higher circularity will be discarded from the analysis. **Note:** 0 ≤ circularity ≤ 1  
+    
     **Exclude organoids based on measurement:** Besides area and circularity, an additional feature can be selected here for additional object-level quality control purposes. A common use case is to use this option to discard dead organoids.  
+    
     **Minimum allowed value:**  Minimum allowed value for the additional quality control measurement. Organoids with smaller values will be discarded from the analysis.  
+    
     **Maximum allowed value:** Maximum allowed value for the additional quality control measurement. Organoids with larger values will be discarded from the analysis.  
+    
     **Pixel width/height:** Pixel size in the raw microscopy image. This is used to set the image scale throughout the test and analysis processes.  
 
 
 6. Click the `OK` button to test the analysis settings in the open image.  
 
 
-7. Fiji will apply the test settings display the results of each analysis step. Images are numbered according to the sequence of operations. More details are available [here](https://github.com/hmbotelho/FIS_image_analysis#421-test-mode).  
+7. Fiji will apply the test settings display the results of each analysis step. Images are numbered according to the sequence of operations.  
 
+    <br/>
+    
     ![All test windows](./img/IJ/test/03_test_allwindows.png)
 
     <br/>
 
 
 8.	The `Results` will display the features of all objects, which may be used to determine object-level quality control values. The log window will show currently applied settings.  
+
+    <br/>
 
     ![IJ test results](./img/IJ/test/13_test_step_by_step_results.png)  
     
@@ -482,10 +519,10 @@ The Fiji workflow comprises two scripts:
 11. Adjustment the analysis settings as many times as required to obtain an adequate segmentation.
 
 
-12. Click `Cancel` or `Close` to exit the test mode.
+12. Click `Cancel` or `X` to exit the test mode.
 
 
-13. To ensure that the selected analysis settings are suitable for the entire dataset, several images should be tested.
+13. Several images should be tested, to ensure that the selected analysis settings are suitable for the entire dataset.
 
     
 
@@ -508,7 +545,7 @@ The Fiji workflow comprises two scripts:
 
     * **Regular expression matching all files being analyzed**: the default expression `.*--C00(?:.ome)??.tif$` will match the images generated by the `htmrenamer` tool. If needed, replace `C00` with the channel name for the fluorescence image.  
     
-    * **Folder location > Raw FIS images**:  The folder containing renamed fluorescence images. [See example here](./demo_dataset/03-images_renamed/demoplate_01).  
+    * **Folder location > Raw FIS images**:  The folder containing renamed fluorescence images ([*e.g.* `demoplate_01`](./demo_dataset/03-images_renamed/demoplate_01)).  
     
     * **Folder location > Results**: The folder where analysis results will be saved.   
     
@@ -551,7 +588,9 @@ The Fiji workflow comprises two scripts:
 
 ### <a name="analysis-statistics">5.5. Statistical data analysis</a>
 
-This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and compute summary statistics on the dataset. Organoid Analyst will analyze data from one plate at a time.
+This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and compute summary statistics on the dataset. Organoid Analyst will analyze data from one plate at a time.  
+
+[Detailed information](https://github.com/hmbotelho/organoid_analyst).  
 
 
 1. Open R and type the following commands:
@@ -569,7 +608,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
     <br/>
 
 
-3. Under `1. Load data`, click on `Choose a '--cellprofiler' or '--ij' folder...` and select the [`demoplate_01--cellprofiler` folder](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) from the demonstration dataset.
+3. Under `1. Load data`, click on `Choose a '--cellprofiler' or '--ij' folder...` and select the [`demoplate_01--cellprofiler`](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) folder.
 
 
 4. Wait while Organoid Analyst concatenates the `objects.csv` files (one per well) generated during the image analysis process.
@@ -618,7 +657,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
 6. Click on `Normalize data`.
 
 
-7. Organoid Analyst will exclude all organoids which do not meet the quality control parameter, normalize the data and update the segmentation masks. This may take a few minutes.
+7. Wait while Organoid Analyst normalizes the data and updates the segmentation masks.
 
    
 8. The `3. Plotting` section allows interactive data exploration, image visualization and per well quality control.
@@ -630,18 +669,18 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
     
     The following features are available:
     
-    **Analysis settings:** Defines the final time point for the experiment and the time points to be used for the calculation of the initial swelling rate.
+    * **Analysis settings:** Defines the final time point for the experiment and the time points to be used for the calculation of the initial swelling rate.
         
-    **Quality control:** Allows excluding individual wells from the analysis (_e.g._ wells with imaging aberrations or insufficient organoids). Selected wells will be hidden from all generated plots and summary statistics.
+    * **Quality control:** Allows excluding individual wells from the analysis (_e.g._ wells with imaging aberrations or insufficient organoids). Selected wells will be hidden from all generated plots and summary statistics.
         
-    **Timelapse viewer:** Allows for opening and inspection of an arbitrary number of wells as time lapse sequences in Fiji. Start by selecting the wells of interest and clicking the ![Open movies in Fiji](./img/OA/openmovies.png) button. Fiji will open in a new window as shown below. Raw fluorescence images will be overlaid with segmentation masks and organoid labels from the analyses.
+    * **Timelapse viewer:** Allows for opening and inspection of an arbitrary number of wells as time lapse sequences in Fiji. Start by selecting the wells of interest and clicking the ![Open movies in Fiji](./img/OA/openmovies.png) button. Fiji will open in a new window as shown below. Raw fluorescence images will be overlaid with segmentation masks and organoid labels from the analyses.
     
     ![Organoid Analyst Fiji](./img/OA/CP--08_OA_IJ.png)
     
     <br/>
     
         
-    **Plots:** Organoid Analyst visualizes the quantitative FIS data in five different plots:
+    * **Plots:** Organoid Analyst visualizes the quantitative FIS data in five different plots:
     
         * Multi-well plate layout with the normalized kinetic curves being displayed for each well. The plot can also show the ISR.  
     
@@ -663,21 +702,23 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
 
     * **Updated segmentation masks**
     * **Updated organoid labels**
-    * **FIS_normalized.xlsx** Data for individual wells: sum of all organoid areas, normalized areas, normalized areas subtracted of the 100% baseline, and cumulative AUC.
-    * **FIS_rawdata.csv** Concatenation of the objects.csv files into a single data table.
-    * **FIS_summary_xxmin.xlsx** Per-treatment summary of AUC, ISR and Aₜ/A₀ measurements.
-    * **FISanalysis_dd-mm-yy_hh-ss.log** Organoid Analyst settings at the moment of data export.
-    * **plot_AtA0_xxmin.png** Bar plot of summarized Aₜ/A₀ measurements.
-    * **plot_AUC_xxmin.png** Bar plot of summarized AUC measurements at the final time point of the experiment.
-    * **plot_initialslope_xxmin.png** Bar plot of summarized ISR measurements.
-    * **plot_overview.png** Plate layout with normalized kinetic curves.
-    * **plot_titration_AUC_xxmin.png** Dose-response plot for AUC measurements at the final time point of the experiment.
+    * `FIS_normalized.xlsx` Data for individual wells: sum of all organoid areas, normalized areas, normalized areas subtracted of the 100% baseline, and cumulative AUC.
+    * `FIS_rawdata.csv` Concatenation of the objects.csv files.
+    * `FIS_summary_xxmin.xlsx` Per-treatment summary of AUC, ISR and Aₜ/A₀ measurements.
+    * `FISanalysis_dd-mm-yy_hh-ss.log` Organoid Analyst settings.
+    * `plot_AtA0_xxmin.png` Bar plot of summarized Aₜ/A₀ measurements.
+    * `plot_AUC_xxmin.png` Bar plot of summarized AUC measurements.
+    * `plot_initialslope_xxmin.png` Bar plot of summarized ISR measurements.
+    * `plot_overview.png` Plate layout with normalized kinetic curves.
+    * `plot_titration_AUC_xxmin.png` Dose-response plot for AUC measurements.
 
 
 10. Below are the AUC values determined with the demonstration dataset
 
 
 **CellProfiler image analysis**
+
+[`05-images_analysis/demoplate_01--cellprofiler`](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) folder.
 
 
 | **Compounds**         | **[Fsk] (μM)** | **AUC (mean)** | **AUC (sd)** |
@@ -722,7 +763,7 @@ _**<a name="t1_4">⁴</a>** Select the location of the Fiji executable file on y
 
 **Fiji image analysis**
 
-Performing an equivalent analysis of the data in [`05-images_analysis/demoplate_01--ij` folder](./demo_dataset/05-images_analysis/demoplate_01--ij) yields the following results:
+Performing an equivalent analysis of the data in [`05-images_analysis/demoplate_01--ij`](./demo_dataset/05-images_analysis/demoplate_01--ij) folder yields the following results:
 
 
 | **Compounds**         | **[Fsk] (μM)** | **AUC (mean)** | **AUC (sd)** |
