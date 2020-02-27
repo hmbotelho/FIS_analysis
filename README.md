@@ -48,7 +48,7 @@ The forskolin-induced swelling (FIS) assay has become the preferential assay to 
 
 
 3. **Statistical Data analysis**  
-    *Including data visualization, exploratory data analysis, quality control and normalization.*
+    *Including data visualization, exploratory data analysis, quality control and normalization.*  
     *Implemented in **Organoid Analyst**.  
     [More info](https://github.com/hmbotelho/organoid_analyst)*
 
