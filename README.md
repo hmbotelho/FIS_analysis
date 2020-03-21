@@ -392,6 +392,8 @@ Let us now define image analysis parameters interactively.
 10. The **FilterObjects** module allows excluding individual organoids based on fluorescence intensity of morphological features. In the `Category` and `Measurement` boxes select the feature chosen in step 9. In `Minimum value` and `Maximum value` insert the range of allowed values. Organoids with values outside this range will be discarded.
 
     <p align="center"><img src="./img/CP/FilterObjects_pannel_witharrow.png"></p>
+    
+    
     *An example where objects with [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html) > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
  
     **Disable the filtering by entering excessively low or high values.**  
@@ -757,6 +759,7 @@ Performing an equivalent analysis of the data in [`05-images_analysis/demoplate_
 
 | **Compounds**         | **[Fsk] (μM)** | **AUC (mean)** | **AUC (sd)** |
 |-----------------------|----------------|----------------|--------------|
+| Fsk                   | 0.008          |         -14.55 |        68.73 |
 | Fsk                   | 0.02           |          22.95 |        38.08 |
 | Fsk                   | 0.05           |         -38.11 |        14.25 |
 | Fsk                   | 0.128          |         -84.04 |         0.34 |
