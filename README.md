@@ -149,6 +149,7 @@ This section describes how to install the software required for the FIS analysis
     002--A--02--01--00--fsk--5
     003--A--03--02--00--fsk_vx809--0.008
     004--A--04--03--00--fsk_vx809--5
+	...
     ```
 
 
@@ -394,7 +395,7 @@ Let us now define image analysis parameters interactively.
     <p align="center"><img src="./img/CP/FilterObjects_pannel_witharrow.png"></p>
     
     
-    *An example where objects with [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html) > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
+    *An example where objects with [FormFactor](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.0.0/modules/measurement.html#id17) > 0.3 were approved thereby excluding irregular structures surrounded by cell clumps from the analysis (arrowhead). Segmentation masks show the identified objects from the segmentation step (`organoids_prelim`) and identified objects by applying the quality control criteria (`organoids`). Panels show a portion of the images from [well H4, #88](./demo_dataset/03-images_renamed/demoplate_01/W0088--fsk_809--0.32/P001--fsk_809--0.32) from the demonstration dataset.*
  
     **Disable the filtering by entering excessively low or high values.**  
 
