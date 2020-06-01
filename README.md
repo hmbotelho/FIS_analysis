@@ -569,7 +569,7 @@ The Fiji image analysis pipeline comprises of two scripts:
 
 ### <a name="analysis-statistics">4.5. Statistical data analysis</a>
 
-This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and how to compute summary statistics of the dataset. Organoid Analyst can analyze one dataset (i.e. one 96 well plate) at a time.  
+This section describes how to use the [**Organoid Analyst**](https://github.com/hmbotelho/organoid_analyst/) application to visualize the image analysis measurements and how to compute summary statistics of the dataset. Organoid Analyst can analyze one dataset (i.e. one 96-well plate) at a time.  
 
 [Detailed information](https://github.com/hmbotelho/organoid_analyst)  
 
@@ -595,7 +595,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 4. Organoid Analyst concatenates the `objects.csv` files (one per well) generated during the image analysis process.
 
 
-5. Under `2. Settings` enter or select relevant information about the experiment:  
+5. Under `2. Settings` enter or select relevant information of the experiment:  
 
 
     | **Parameter**                                  | **Value**                                                         |
