@@ -194,8 +194,9 @@ This section describes how to install the software that is required for the FIS 
 4. **Install Organoid Analyst:** in the R console type
     
 ```
-install.packages("shiny")
-library(shiny)
+install.packages("devtools")
+library(devtools)
+source_url("https://github.com/hmbotelho/organoid_analyst/raw/master/installer.R")
 runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 ```
 
