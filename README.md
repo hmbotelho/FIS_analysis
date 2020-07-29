@@ -119,13 +119,11 @@ This section describes how to install the software that is required for the FIS 
     3. **Install <a name="setup-R">R</a>:** Download [here](https://cran.r-project.org/).  
 
 
-    4. **Install the htmrenamer package:** in the R command line type
+    4. **Install the htmrenamer package:** download the [latest htmrenamer release](https://github.com/hmbotelho/htmrenamer/releases) (`htmrenamer_xxx.tar.gz`). Install it using he menu bar (`Packages > Install package(s) from local files...`) or via the R command line:
 
-    ```
-    install.packages("devtools")
-    library(devtools)
-    install_github("hmbotelho/htmrenamer")
-    ```
+	```
+	install.packages("path_to_file/htmrenamer_xxx.tar.gz", repo=NULL)
+	```
 
 
 * **Describe the contents of the assay plate (infile)**
@@ -134,7 +132,7 @@ This section describes how to install the software that is required for the FIS 
 
 
     ```
-    library("htmrenamer")
+    library(htmrenamer)
     newinfile.char(8, 12, show = TRUE, saveto = "myinfile.txt")
     ```
 
@@ -275,7 +273,7 @@ TIF files are the required input for the workflow.
 1. Create a customized infile using [this template](https://github.com/hmbotelho/htmrenamer/blob/master/extras/InFile_template.xlsx) or the following R commands:
     
     ```
-    library("htmrenamer")
+    library(htmrenamer)
     newinfile.char(8, 12, show = TRUE, saveto = "myinfile.txt")
     ```
 
