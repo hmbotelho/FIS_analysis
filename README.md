@@ -105,7 +105,7 @@ This section describes how to install the software that is required for the FIS 
 
 * **Leica files**  
     
-    1. Images must be acquired with the MatrixScreener module of the [Leica LAS X](https://www.leica-microsystems.com/products/microscope-software/p/leica-las-x-ls/) software and exported as OME-TIFF.  
+    1. Images must be acquired with the [Leica LAS X](https://www.leica-microsystems.com/products/microscope-software/p/leica-las-x-ls/) software, either on the MatrixScreener or Navigator modules.  
 
 
 * **Installation of the htmrenamer R package**  
@@ -238,11 +238,11 @@ The demonstration dataset consists of:
 4. [**Raw microscopy images (renamed)**](./demo_dataset/03-images_renamed/demoplate_01) (`03-images_renamed/demoplate_01`, 91.9 MB)
 5. [**CellProfiler and Fiji image analysis pipelines** (pre-configured for the demonstration dataset)](./demo_dataset/04-analysis_pipelines) (`04-analysis_pipelines`, 1.2 MB)
 6. [**Image quantification outputs (CellProfiler)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) (`05-images_analysis/demoplate_01--cellprofiler`, 14.8 MB)
-7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 16.0 MB)
+7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 239 MB)
 8. [**Quantification summary (from CellProfiler data)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler--analysis) (`05-images_analysis/demoplate_01--cellprofiler--analysis`, 37.0 MB)
-9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 36.1 MB)
+9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 259 MB)
 
-Download the entire dataset [here](./demo_dataset) (458 MB).
+Download the entire dataset [here](./demo_dataset) (735 MB).
 
 
 
@@ -455,12 +455,16 @@ The Fiji image analysis pipeline comprises of two scripts:
     * **Radius of filter:** The radius of the background filter.  
     
     * **Offset after background correction:** This value will be subtracted from all pixels after background correction.  
+	
+	* **Thresholding method:** Select between a manual threshold value or an [auto-thresholding method](https://imagej.net/Auto_Threshold). Thresholding will occur after pseudo-flat field subtraction, offset correction and grey value rescaling to [0 ~ 1].  
     
-    * **Manual threshold value:** The threshold will be set after pseudo-flat field subtraction, offset correction and grey value rescaling [0 ~ 1]. All pixels above this grey value will be assigned to the objects (organoids).  
+    * **Manual threshold value:** Only applies for the 'Manual' thresholding method. All pixels above this grey value will be assigned to the objects (organoids).  
     
     * **Fill all holes:** When this box is unchecked, an optimized hole filling algorithm ([conditional fill holes](https://github.com/hmbotelho/FIS_image_analysis#1-background)) will be applied. When this box is checked, a standard fill holes operation will be performed after the thresholding step (all holes are filled [example](#fig-fillholes)).  
     
     * **Remove salt and pepper noise.**  
+	
+	* **Declump organoids:** separate clustered objects.  
      
     * **Exclude objects touching the image border.**  
     
@@ -504,7 +508,10 @@ The Fiji image analysis pipeline comprises of two scripts:
 
 13. Several images should be tested and inspected prior to running the batch analysis mode to ensure that the selected analysis settings are suitable for the entire dataset.  
 
-    
+
+14. The Log window can be saved (`File > Save As...`) to automatically load the displayed settings in the batch analysis mode.  
+
+
 
 #### <a name="analysis-imageanalysis-IJ-batchmode">4.4.2.2. Batch analysis mode</a>
 
@@ -529,7 +536,9 @@ The Fiji image analysis pipeline comprises of two scripts:
     
     * **Folder location > Results**: Specify the folder where the results of the analysis will be saved.   
     
-    The demonstration dataset included with this guide was analyzed using the following settings:
+    If `Load settings?` is checked Fiji will ask for the settings file generated during the test mode. This loads all settings except the regular expression and folder locations.  
+	
+	The demonstration dataset included with this guide was analyzed using the following settings:
 
 
     <a name="parameters-ij"></a>
@@ -539,9 +548,11 @@ The Fiji image analysis pipeline comprises of two scripts:
     | _Background filter_                          | Median                 |
     | _Radius of filter_                           | 50                     |
     | _Offset after background correction_         | 0.005                  |
+	| _Thresholding method_                        | Manual                 |
     | _Manual threshold value_                     | 0.05                   |
     | _Fill all holes?_                            | No                     |
     | _Remove salt and pepper noise?_              | Yes                    |
+	| _Declump organoids?_                         | No                     |
     | _Exclude objects touching the image border?_ | No                     |
     | _Minimum organoid area_                      | 500 μm²                |
     | _Maximum organoid area_                      | 99999999 μm²           |
@@ -557,7 +568,7 @@ The Fiji image analysis pipeline comprises of two scripts:
 5. Click `OK` to start the analysis.
 
 
-6.	Fiji will produce an output folder identifiable by the `--ij` suffix, containing `objects.csv`, PNG and `settings_YYYY-MM-DD_HH-MM.log` files.
+6.	Fiji will produce an output folder identifiable by the `--ij` suffix, containing `objects.csv`, TIF and `settings_YYYY-MM-DD_HH-MM.log` files.
 
 
 **Expected result:** [`05-images_analysis/demoplate_01--ij`](./demo_dataset/05-images_analysis/demoplate_01--ij)
