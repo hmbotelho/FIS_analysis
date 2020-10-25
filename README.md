@@ -121,9 +121,16 @@ This section describes how to install the software that is required for the FIS 
 
     4. **Install the htmrenamer package:** download the [latest htmrenamer release](https://github.com/hmbotelho/htmrenamer/releases) (`htmrenamer_xxx.tar.gz`). Open R and install via the command line:
 
+	**Windows:**  
 	```
 	install.packages(c("gWidgets2", "gWidgets2tcltk", "openxlsx", "reshape2", "tiff", "XML"), dependencies=T)
-        install.packages("c:/path_to_file/htmrenamer_xxx.tar.gz", repos=NULL)
+    install.packages("c:/path_to_file/htmrenamer_xxx.tar.gz", repos=NULL)
+	```
+
+	**macOS:**  
+	```
+	install.packages(c("gWidgets2", "gWidgets2tcltk", "openxlsx", "reshape2", "tiff", "XML"), dependencies=T)
+    install.packages("/path_to_file/htmrenamer_xxx.tar", repos=NULL, type="source")
 	```
 
 
