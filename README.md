@@ -110,19 +110,20 @@ This section describes how to install the software that is required for the FIS 
 
 * **Installation of the htmrenamer R package**  
 
-    1. **Install Java:** get the Oracle JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/).  
+    1. **Install <a name="setup-R">R</a>:** Download [here](https://cran.r-project.org/).  
 
 
-    2. **Install XQuartz (macOS only):** Download [here](https://www.xquartz.org/).  
+    2. **Install <a name="setup-commandlinetools">Command Line Tools for Xcode</a> (macOS only):** Download and install the latest version matching your macOS version from [here](https://developer.apple.com/download/more/?=command%20line%20tools) (Apple ID required).  
+
+    
+    3. **Install XQuartz (macOS only):** Download [here](https://www.xquartz.org/).  
 
 
-    3. **Install <a name="setup-R">R</a>:** Download [here](https://cran.r-project.org/).  
-
-
-    4. **Install the htmrenamer package:** download the [latest htmrenamer release](https://github.com/hmbotelho/htmrenamer/releases) (`htmrenamer_xxx.tar.gz`). Install it using he menu bar (`Packages > Install package(s) from local files...`) or via the R command line:
+    4. **Install the htmrenamer package:** download the [latest htmrenamer release](https://github.com/hmbotelho/htmrenamer/releases) (`htmrenamer_xxx.tar.gz`). Open R and install via the command line:
 
 	```
-	install.packages("path_to_file/htmrenamer_xxx.tar.gz", repo=NULL)
+	install.packages(c("gWidgets2", "gWidgets2tcltk", "openxlsx", "reshape2", "tiff", "XML"), dependencies=T)
+        install.packages("c:/path_to_file/htmrenamer_xxx.tar.gz", repos=NULL)
 	```
 
 
@@ -186,16 +187,17 @@ This section describes how to install the software that is required for the FIS 
 2. **Install R:** see [section above](#setup-R).
 
 
-3. **Install Fiji:** see [section above](#setup-Fiji).
+3. **Install Command Line Tools for Xcode (macOS only):** see [section above](#setup-commandlinetools).
 
 
-4. **Install Organoid Analyst:** in the R console type
+4. **Install Fiji:** see [section above](#setup-Fiji).
+
+
+5. **Install Organoid Analyst:** in the R console type
     
 ```
-install.packages("devtools")
-library(devtools)
-source_url("https://github.com/hmbotelho/organoid_analyst/raw/master/installer.R")
-runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
+source("https://raw.githubusercontent.com/hmbotelho/organoid_analyst/master/installer.R")
+runGitHub("organoid_analyst", "hmbotelho", launch.browser=T)
 ```
 
 
