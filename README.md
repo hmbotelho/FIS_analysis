@@ -246,12 +246,12 @@ The demonstration dataset consists of:
 3. [**Infile** (well description)](./demo_dataset/02-microscope_infile/demoplate_01.txt) (`02-microscope_infile/demoplate_01.txt`, 3 KB)
 4. [**Raw microscopy images (renamed)**](./demo_dataset/03-images_renamed/demoplate_01) (`03-images_renamed/demoplate_01`, 91.9 MB)
 5. [**CellProfiler and Fiji image analysis pipelines** (pre-configured for the demonstration dataset)](./demo_dataset/04-analysis_pipelines) (`04-analysis_pipelines`, 1.2 MB)
-6. [**Image quantification outputs (CellProfiler)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) (`05-images_analysis/demoplate_01--cellprofiler`, 14.8 MB)
+6. [**Image quantification outputs (CellProfiler)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) (`05-images_analysis/demoplate_01--cellprofiler`, 19.7 MB)
 7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 239 MB)
 8. [**Quantification summary (from CellProfiler data)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler--analysis) (`05-images_analysis/demoplate_01--cellprofiler--analysis`, 37.0 MB)
 9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 259 MB)
 
-Download the entire dataset [here](./demo_dataset) (735 MB).
+Download the entire dataset [here](./demo_dataset) (740 MB) or [here](https://cirrus.ciencias.ulisboa.pt/owncloud/s/FpeRzcxsaeEPMPN) (zip, 296 MB).
 
 
 
@@ -714,7 +714,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
     * `FISanalysis_dd-mm-yy_hh-ss.log` Organoid Analyst settings.
     * `plot_AtA0_xxmin.png` Bar plot of summarized Aₜ/A₀ measurements.
     * `plot_AUC_xxmin.png` Bar plot of summarized AUC measurements.
-    * `plot_initialslope_xxmin.png` Bar plot of summarized ISR measurements.
+    * `plot_initialswellingrate_xxmin.png` Bar plot of summarized ISR measurements.
     * `plot_overview.png` Plate layout with normalized kinetic curves.
     * `plot_titration_AUC_xxmin.png` Dose-response plot for AUC measurements.
 
@@ -733,7 +733,7 @@ runGitHub("organoid_analyst", "hmbotelho", launch.browser = T)
 | Fsk                   | 0.02           |          -2.07 |        36.18 |
 | Fsk                   | 0.05           |          14.76 |         6.87 |
 | Fsk                   | 0.128          |         -64.81 |         2.29 |
-| Fsk                   | 0.32           |          29.95 |         1.13 |
+| Fsk                   | 0.32           |         -29.95 |         1.13 |
 | Fsk                   | 0.8            |          -1.88 |        14.57 |
 | Fsk                   | 2              |           43.7 |         12.3 |
 | Fsk                   | 5              |          47.43 |        44.05 |
