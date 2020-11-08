@@ -247,11 +247,11 @@ The demonstration dataset consists of:
 4. [**Raw microscopy images (renamed)**](./demo_dataset/03-images_renamed/demoplate_01) (`03-images_renamed/demoplate_01`, 91.9 MB)
 5. [**CellProfiler and Fiji image analysis pipelines** (pre-configured for the demonstration dataset)](./demo_dataset/04-analysis_pipelines) (`04-analysis_pipelines`, 1.2 MB)
 6. [**Image quantification outputs (CellProfiler)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler) (`05-images_analysis/demoplate_01--cellprofiler`, 14.8 MB)
-7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 239 MB)
+7. [**Image quantification outputs (Fiji)**](./demo_dataset/05-images_analysis/demoplate_01--ij) (`05-images_analysis/demoplate_01--ij`, 241 MB)
 8. [**Quantification summary (from CellProfiler data)**](./demo_dataset/05-images_analysis/demoplate_01--cellprofiler--analysis) (`05-images_analysis/demoplate_01--cellprofiler--analysis`, 37.0 MB)
-9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 259 MB)
+9. [**Quantification summary (from Fiji data)**](./demo_dataset/05-images_analysis/demoplate_01--ij--analysis) (`05-images_analysis/demoplate_01--ij--analysis`, 37.4 MB)
 
-Download the entire dataset [here](./demo_dataset) (735 MB) or [here](https://cirrus.ciencias.ulisboa.pt/owncloud/s/cFnZQfnT8igWF27) (zip, 291 MB).
+Download the entire dataset [here](./demo_dataset) (735 MB) or [here](https://cirrus.ciencias.ulisboa.pt/owncloud/s/cFnZQfnT8igWF27) (zip, 294 MB).
 
 
 
@@ -544,6 +544,8 @@ The Fiji image analysis pipeline comprises of two scripts:
     * **Folder location > Raw FIS images**: Select the folder containing the renamed fluorescence images ([`demoplate_01`](./demo_dataset/03-images_renamed/demoplate_01)).  
     
     * **Folder location > Results**: Specify the folder where the results of the analysis will be saved.   
+	
+	* **Output image format**: The image format for segmentation count masks (TIF, PNG or both).  
     
     If `Load settings?` is checked Fiji will ask for the settings file generated during the test mode. This loads all settings except the regular expression and folder locations.  
 	
@@ -572,6 +574,7 @@ The Fiji image analysis pipeline comprises of two scripts:
     | _Maximum allowed value_                      | _Irrelevant_           |
     | _Pixel width/height_                         | 4.991 μm               |
     | _Regular expression_                         | .*--C00(?:.ome)??.tif$ |
+	| _Output image format_                        | TIF+PNG                |
 
 
 5. Click `OK` to start the analysis.
